@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>MyAssessment</title>
+    <th:block th:include="layout/css"></th:block>
+    <th:block th:include="layout/js"></th:block>
+  </head>
+<body>
+<!----------------- MENU ------------------->
+<th:block th:include="layout/menu"></th:block>
+<!----------------- MENU ------------------->
+<br>
+<h2>My Assessments</h2>
+<br>
+<!--<input type="submit" value="New Assessments">-->
+<button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>
+<br>
+<p></p>
+<table class="w3-table-all">
+
+  <tbody>
+    <tr>
+      <th style="width:20%;"> Assessment Name </th>
+      <th style="width:20%;"> Assessment Type </th>
+      <th style="width:20%;"> Last Modified </th>
+      <th style="width:20%;"> Status </th>
+      <th style="width:1%;"> </th>
+      <th style="width:1%;"> </th>
+    </tr>
+    <tr>
+      <th style="width:20%;"> dekfewz </th>
+      <th style="width:20%;"> RRA </th>
+      <th style="width:20%;"> 21-Nov-2022 </th>
+      <th style="width:20%;"> 0/48 Question(s) Completed </th>
+      <th style="width:1%;"><button type="button" class="btn btn-warning">Edit</button></th>
+      <th style="width:1%;"><button type="button" class="btn btn-danger">Remove</button></th>
+    </tr>
+    </tr>
+
+  </tbody>
+</table>
+
+<p></p>
+</body>
+
+
+</html>
+
+

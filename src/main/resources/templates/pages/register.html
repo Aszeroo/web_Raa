@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xml:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
+<style>
+    body {
+        background: #eee;
+    }
+
+    .bgWhite {
+        background: white;
+        box-shadow: 0px 3px 6px 0px #cacaca;
+    }
+
+    .title {
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 24px
+    }
+
+    .customBtn {
+        border-radius: 0px;
+        padding: 10px;
+    }
+
+    .otp {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
+</style>
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>DATAONE</h1>
+    <br>
+    <br>
+    <h2>register</h2>
+    <form action="/login">
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        </div>
+        <div class="form-group">
+            <label for="cpwd">Confirm Password:</label>
+            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">
+        </div>
+        <br>
+        <div class="container register">
+            <p>You Have Account ? Please <a href="/login"> Login</a></p>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal"
+                data-target=".bd-example-modal-sm">Register</button>
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+             aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="row justify-content-md-center">
+                        <div class="row">
+                            <div class="col-sm-12 mt-5 bgWhite center">
+                                <div class="title">
+                                    Verify OTP
+                                </div>
+                                <br>
+                                <form action="" class='mt-5' >
+                                    <center>
+                                        <input class="otp" type="text" oninput='digitValidate(this)'
+                                               onkeyup='tabChange(1)' maxlength=1>
+                                        <input class="otp" type="text" oninput='digitValidate(this)'
+                                               onkeyup='tabChange(2)' maxlength=1>
+                                        <input class="otp" type="text" oninput='digitValidate(this)'
+                                               onkeyup='tabChange(3)' maxlength=1>
+                                        <input class="otp" type="text" oninput='digitValidate(this)'
+                                               onkeyup='tabChange(4)' maxlength=1>
+                                        <input class="otp" type="text" oninput='digitValidate(this)'
+                                               onkeyup='tabChange(5)' maxlength=1>
+                                    </center>
+
+                                </form>
+                                <hr class="mt-4">
+                                <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<br>
+<script>
+    let digitValidate = function (ele) {
+        console.log(ele.value);
+        ele.value = ele.value.replace(/[^0-9]/g, '');
+    }
+
+    let tabChange = function (val) {
+        let ele = document.querySelectorAll('input');
+        if (ele[val - 1].value != '') {
+            ele[val].focus()
+        } else if (ele[val - 1].value == '') {
+            ele[val - 2].focus()
+        }
+    }
+</script>
+</body>
+
+</html>
