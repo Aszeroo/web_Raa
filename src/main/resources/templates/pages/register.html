@@ -31,11 +31,12 @@
 <head>
     <title>Register</title>
     <meta charset="utf-8">
+    <meta name="author" content="Softnio">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!--    <th:block th:include="layout/registerjs"></th:block>-->
+        <th:block th:include="layout/js"></th:block>
 </head>
 
 <body>
@@ -45,87 +46,95 @@
     <br>
     <br>
     <h2>register</h2>
-    <form th:object="${newUser}">
+    <form class="needs-validation" id="new-user-form" novalidate th:object="${newUser}">
+        <input type="hidden" th:field="*{userId}">
         <div class="form-group">
-            <label  th:for="*{firstName}" >First Name:</label>
-            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" th:field="*{firstName}">
+            <label class="form-label" th:for="*{firstName}">First Name:</label>
+            <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
+                   th:field="*{firstName}">
         </div>
         <div class="form-group">
-            <label th:for="*{lastName}">Last Name:</label>
-            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname" th:field="*{lastName}">
+            <label class="form-label" th:for="*{lastName}">Last Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
+                   th:field="*{lastName}">
         </div>
         <div class="form-group">
-            <label th:for="*{companyName}">Company:</label>
-            <input type="text" class="form-control" id="company" placeholder="Enter Company" name="company" th:field="*{companyName}">
+            <label class="form-label" th:for="*{companyName}">Company:</label>
+            <input type="text" class="form-control" placeholder="Enter Company" name="company"
+                   th:field="*{companyName}">
         </div>
         <div class="form-group">
-            <label th:for="*{tel}">Phone Number:</label>
-            <input type="text" class="form-control" id="tel" placeholder="Enter Phone Number" name="tel" th:field="*{tel}">
+            <label class="form-label" th:for="*{tel}">Phone Number:</label>
+            <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
+                   th:field="*{tel}">
         </div>
         <div class="form-group">
-            <label th:for="*{email}">E-mail:</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email" th:field="*{email}">
+            <label class="form-label" th:for="*{email}">E-mail:</label>
+            <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
+                   th:field="*{email}">
         </div>
 
         <div class="form-group">
-            <label th:for="*{username}">Username:</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" th:field="*{username}">
+            <label class="form-label" th:for="*{username}">Username:</label>
+            <input type="text" class="form-control" placeholder="Enter Username" name="username"
+                   th:field="*{username}">
         </div>
 
 
         <div class="form-group">
-            <label th:for="*{password}">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" th:field="*{password}">
+            <label class="form-label" th:for="*{password}">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="pwd"
+                   th:field="*{password}">
         </div>
-        <div class="form-group">
-            <label for="cpwd">Confirm Password:</label>
-            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd" >
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="cpwd">Confirm Password:</label>-->
+<!--            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">-->
+<!--        </div>-->
         <br>
         <div class="container register">
             <p>You Have Account ? Please <a href="/login"> Login</a></p>
         </div>
         <br>
-<!--        <button type="submit" class="btn btn-primary" data-toggle="modal"-->
-<!--                data-target=".bd-example-modal-sm" onclick="inputdeta()">Register</button>-->
-        <button type="button" onclick="inputdeta()">Register</button>
+        <!--        <button type="submit" class="btn btn-primary" data-toggle="modal"-->
+        <!--                data-target=".bd-example-modal-sm" onclick="inputdeta()">Register</button>-->
+        <button type="submit" id="save-user">Register</button>
         <p id="demo"></p>
 
-<!--        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"-->
-<!--             aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
-<!--            <div class="modal-dialog modal-sm">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="row justify-content-md-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-sm-12 mt-5 bgWhite center">-->
-<!--                                <div class="title">-->
-<!--                                    Verify OTP-->
-<!--                                </div>-->
-<!--                                <br>-->
-<!--                                <form action="" class='mt-5' >-->
-<!--                                    <center>-->
-<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
-<!--                                               onkeyup='tabChange(1)' maxlength=1>-->
-<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
-<!--                                               onkeyup='tabChange(2)' maxlength=1>-->
-<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
-<!--                                               onkeyup='tabChange(3)' maxlength=1>-->
-<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
-<!--                                               onkeyup='tabChange(4)' maxlength=1>-->
-<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
-<!--                                               onkeyup='tabChange(5)' maxlength=1>-->
-<!--                                    </center>-->
+        <!--        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"-->
+        <!--             aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
+        <!--            <div class="modal-dialog modal-sm">-->
+        <!--                <div class="modal-content">-->
+        <!--                    <div class="row justify-content-md-center">-->
+        <!--                        <div class="row">-->
+        <!--                            <div class="col-sm-12 mt-5 bgWhite center">-->
+        <!--                                <div class="title">-->
+        <!--                                    Verify OTP-->
+        <!--                                </div>-->
+        <!--                                <br>-->
+        <!--                                <form action="" class='mt-5' >-->
+        <!--                                    <center>-->
+        <!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+        <!--                                               onkeyup='tabChange(1)' maxlength=1>-->
+        <!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+        <!--                                               onkeyup='tabChange(2)' maxlength=1>-->
+        <!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+        <!--                                               onkeyup='tabChange(3)' maxlength=1>-->
+        <!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+        <!--                                               onkeyup='tabChange(4)' maxlength=1>-->
+        <!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+        <!--                                               onkeyup='tabChange(5)' maxlength=1>-->
+        <!--                                    </center>-->
 
-<!--                                </form>-->
-<!--                                <hr class="mt-4">-->
-<!--                                <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>-->
-<!--                                <br>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--                                </form>-->
+        <!--                                <hr class="mt-4">-->
+        <!--                                <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>-->
+        <!--                                <br>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
     </form>
 </div>
@@ -146,49 +155,85 @@
     //         ele[val - 2].focus()
     //     }
     // }
-    function inputdeta() {
-        var fname = document.getElementById("fname").value;
-        var lname = document.getElementById("lname").value;
-        var company = document.getElementById("company").value;
-        var tel = document.getElementById("tel").value;
-        var email = document.getElementById("email").value;
-        var username = document.getElementById("username").value;
-        var pwd = document.getElementById("pwd").value;
-        var cpwd = document.getElementById("cpwd").value;
 
-        var objectRegister = {
-            "userId" : document.getElementById("username").value,
-            "username" : document.getElementById("username").value,
-            "password" : document.getElementById("pwd").value,
-            "firstName" : document.getElementById("fname").value,
-            "lastName" : document.getElementById("lname").value,
-            "email" : document.getElementById("email").value,
-            "tel" : document.getElementById("tel").value,
-            "companyName" : document.getElementById("company").value,
+    $('#new-user-form').on('submit', function (e) {
+        e.preventDefault();
+        var $form = $('#new-user-form');
+        // console.log($.param($form.serializeArray()))
+        // console.log($('#add-view-edit-user #tenantId').val())
+        // if ($form.valid()) {
 
-
-            "status" : document.getElementById("company").value,
-
-        }
-    console.log(objectRegister)
-
-        $.post("http://localhost:8081/registeroutput",
-            {
-                name: "Donald Duck",
-                city: "Duckburg"
-            },
-            function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
+            var objectRegister = {
+                "username": $('#username').val(),
+                "password": "test",
+                "firstName": "test",
+                "lastName": "test",
+                "email": "test",
+                "tel": "test",
+                "companyName": "test",
+                "status": "active",
+            }
+            $.ajax({
+                type: 'POST',
+                async: false,
+                dataType: 'text',
+                data: JSON.stringify(objectRegister),
+                contentType: 'application/json; charset=utf-8',
+                url: '/apis/user/save',
+                success: function (data, textStatus) {
+                    console.log("data -> ", data)
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    var response = JSON.parse(xhr.responseText);
+                    console.log("response -> ", response)
+                }
             });
-        // document.getElementById("demo").innerHTML = fname;
-        // document.getElementById("demo").innerHTML = lname;
-        // document.getElementById("demo").innerHTML = company;
-        // document.getElementById("demo").innerHTML = tel;
-        // document.getElementById("demo").innerHTML = email;
-        // document.getElementById("demo").innerHTML = username;
-        // document.getElementById("demo").innerHTML = pwd;
-        // document.getElementById("demo").innerHTML = cpwd;
-    }
+        // }
+    });
+
+    // function inputdeta() {
+    //     var fname = document.getElementById("fname").value;
+    //     var lname = document.getElementById("lname").value;
+    //     var company = document.getElementById("company").value;
+    //     var tel = document.getElementById("tel").value;
+    //     var email = document.getElementById("email").value;
+    //     var username = document.getElementById("username").value;
+    //     var pwd = document.getElementById("pwd").value;
+    //     var cpwd = document.getElementById("cpwd").value;
+    //
+    //     var objectRegister = {
+    //         "userId": document.getElementById("username").value,
+    //         "username": document.getElementById("username").value,
+    //         "password": document.getElementById("pwd").value,
+    //         "firstName": document.getElementById("fname").value,
+    //         "lastName": document.getElementById("lname").value,
+    //         "email": document.getElementById("email").value,
+    //         "tel": document.getElementById("tel").value,
+    //         "companyName": document.getElementById("company").value,
+    //
+    //
+    //         "status": document.getElementById("company").value,
+    //
+    //     }
+    //     console.log(objectRegister)
+    //
+    //     $.post("http://localhost:8081/registeroutput",
+    //         {
+    //             name: "Donald Duck",
+    //             city: "Duckburg"
+    //         },
+    //         function (data, status) {
+    //             alert("Data: " + data + "\nStatus: " + status);
+    //         });
+    //     // document.getElementById("demo").innerHTML = fname;
+    //     // document.getElementById("demo").innerHTML = lname;
+    //     // document.getElementById("demo").innerHTML = company;
+    //     // document.getElementById("demo").innerHTML = tel;
+    //     // document.getElementById("demo").innerHTML = email;
+    //     // document.getElementById("demo").innerHTML = username;
+    //     // document.getElementById("demo").innerHTML = pwd;
+    //     // document.getElementById("demo").innerHTML = cpwd;
+    // }
 </script>
 
 

@@ -18,6 +18,11 @@ import java.util.Date;
 @Setter
 public class User {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     private String userId;
     private String username;
     private String password;
@@ -32,7 +37,7 @@ public class User {
     @LastModifiedDate
     private Date updateDate;
     private String updateBy;
-    private String checkList;
+    private String checklist;
     private String type;
     private String status;
 }
