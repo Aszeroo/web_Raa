@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <th:block th:include="layout/js"></th:block>
+    <th:block th:include="layout/js"></th:block>
 </head>
 
 <body>
@@ -86,10 +86,10 @@
             <input type="password" class="form-control" placeholder="Enter password" name="pwd"
                    th:field="*{password}">
         </div>
-<!--        <div class="form-group">-->
-<!--            <label for="cpwd">Confirm Password:</label>-->
-<!--            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">-->
-<!--        </div>-->
+        <!--        <div class="form-group">-->
+        <!--            <label for="cpwd">Confirm Password:</label>-->
+        <!--            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">-->
+        <!--        </div>-->
         <br>
         <div class="container register">
             <p>You Have Account ? Please <a href="/login"> Login</a></p>
@@ -158,36 +158,32 @@
 
     $('#new-user-form').on('submit', function (e) {
         e.preventDefault();
-        var $form = $('#new-user-form');
-        // console.log($.param($form.serializeArray()))
-        // console.log($('#add-view-edit-user #tenantId').val())
-        // if ($form.valid()) {
 
-            var objectRegister = {
-                "username": $('#username').val(),
-                "password": "test",
-                "firstName": "test",
-                "lastName": "test",
-                "email": "test",
-                "tel": "test",
-                "companyName": "test",
-                "status": "active",
+        var objectRegister = {
+            "username": $('#username').val(),
+            "password": $('#password').val(),
+            "firstName": $('#firstName').val(),
+            "lastName": $('#lastName').val() ,
+            "email": $('#email').val() ,
+            "tel": $('#tel').val() ,
+            "companyName": $('#companyName').val(),
+            "status": "active",
+        }
+        $.ajax({
+            type: 'POST',
+            async: false,
+            dataType: 'text',
+            data: JSON.stringify(objectRegister),
+            contentType: 'application/json; charset=utf-8',
+            url: '/apis/user/save',
+            success: function (data, textStatus) {
+                console.log("data -> ", data)
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                var response = JSON.parse(xhr.responseText);
+                console.log("response -> ", response)
             }
-            $.ajax({
-                type: 'POST',
-                async: false,
-                dataType: 'text',
-                data: JSON.stringify(objectRegister),
-                contentType: 'application/json; charset=utf-8',
-                url: '/apis/user/save',
-                success: function (data, textStatus) {
-                    console.log("data -> ", data)
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    var response = JSON.parse(xhr.responseText);
-                    console.log("response -> ", response)
-                }
-            });
+        });
         // }
     });
 
