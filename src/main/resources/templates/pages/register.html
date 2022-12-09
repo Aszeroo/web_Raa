@@ -51,35 +51,35 @@
             <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" th:field="*{firstName}">
         </div>
         <div class="form-group">
-            <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+            <label th:for="*{lastName}">Last Name:</label>
+            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname" th:field="*{lastName}">
         </div>
         <div class="form-group">
-            <label for="company">Company:</label>
-            <input type="text" class="form-control" id="company" placeholder="Enter Company" name="company">
+            <label th:for="*{companyName}">Company:</label>
+            <input type="text" class="form-control" id="company" placeholder="Enter Company" name="company" th:field="*{companyName}">
         </div>
         <div class="form-group">
-            <label for="tel">Phone Number:</label>
-            <input type="text" class="form-control" id="tel" placeholder="Enter Phone Number" name="tel">
+            <label th:for="*{tel}">Phone Number:</label>
+            <input type="text" class="form-control" id="tel" placeholder="Enter Phone Number" name="tel" th:field="*{tel}">
         </div>
         <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email">
-        </div>
-
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username">
+            <label th:for="*{email}">E-mail:</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email" th:field="*{email}">
         </div>
 
+        <div class="form-group">
+            <label th:for="*{username}">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" th:field="*{username}">
+        </div>
+
 
         <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            <label th:for="*{password}">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" th:field="*{password}">
         </div>
         <div class="form-group">
             <label for="cpwd">Confirm Password:</label>
-            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">
+            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd" >
         </div>
         <br>
         <div class="container register">
@@ -155,9 +155,22 @@
         var username = document.getElementById("username").value;
         var pwd = document.getElementById("pwd").value;
         var cpwd = document.getElementById("cpwd").value;
-console.log(fname)
-        console.log(lname)
-        console.log(company)
+
+        var objectRegister = {
+            "userId" : document.getElementById("username").value,
+            "username" : document.getElementById("username").value,
+            "password" : document.getElementById("pwd").value,
+            "firstName" : document.getElementById("fname").value,
+            "lastName" : document.getElementById("lname").value,
+            "email" : document.getElementById("email").value,
+            "tel" : document.getElementById("tel").value,
+            "companyName" : document.getElementById("company").value,
+
+
+            "status" : document.getElementById("company").value,
+
+        }
+    console.log(objectRegister)
 
         $.post("http://localhost:8081/registeroutput",
             {
