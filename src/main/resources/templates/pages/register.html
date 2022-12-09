@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<!--    <th:block th:include="layout/registerjs"></th:block>-->
 </head>
 
 <body>
@@ -45,7 +45,7 @@
     <br>
     <br>
     <h2>register</h2>
-    <form action="/login">
+    <form>
         <div class="form-group">
             <label for="fname">First Name:</label>
             <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
@@ -55,9 +55,24 @@
             <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
         </div>
         <div class="form-group">
+            <label for="company">Company:</label>
+            <input type="text" class="form-control" id="company" placeholder="Enter Company" name="company">
+        </div>
+        <div class="form-group">
+            <label for="tel">Phone Number:</label>
+            <input type="text" class="form-control" id="tel" placeholder="Enter Phone Number" name="tel">
+        </div>
+        <div class="form-group">
             <label for="email">E-mail:</label>
             <input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email">
         </div>
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username">
+        </div>
+
+
         <div class="form-group">
             <label for="pwd">Password:</label>
             <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
@@ -70,62 +85,102 @@
         <div class="container register">
             <p>You Have Account ? Please <a href="/login"> Login</a></p>
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal"
-                data-target=".bd-example-modal-sm">Register</button>
-        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
-             aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="row justify-content-md-center">
-                        <div class="row">
-                            <div class="col-sm-12 mt-5 bgWhite center">
-                                <div class="title">
-                                    Verify OTP
-                                </div>
-                                <br>
-                                <form action="" class='mt-5' >
-                                    <center>
-                                        <input class="otp" type="text" oninput='digitValidate(this)'
-                                               onkeyup='tabChange(1)' maxlength=1>
-                                        <input class="otp" type="text" oninput='digitValidate(this)'
-                                               onkeyup='tabChange(2)' maxlength=1>
-                                        <input class="otp" type="text" oninput='digitValidate(this)'
-                                               onkeyup='tabChange(3)' maxlength=1>
-                                        <input class="otp" type="text" oninput='digitValidate(this)'
-                                               onkeyup='tabChange(4)' maxlength=1>
-                                        <input class="otp" type="text" oninput='digitValidate(this)'
-                                               onkeyup='tabChange(5)' maxlength=1>
-                                    </center>
+        <br>
+<!--        <button type="submit" class="btn btn-primary" data-toggle="modal"-->
+<!--                data-target=".bd-example-modal-sm" onclick="inputdeta()">Register</button>-->
+        <button type="button" onclick="inputdeta()">Register</button>
+        <p id="demo"></p>
 
-                                </form>
-                                <hr class="mt-4">
-                                <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"-->
+<!--             aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog modal-sm">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="row justify-content-md-center">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-sm-12 mt-5 bgWhite center">-->
+<!--                                <div class="title">-->
+<!--                                    Verify OTP-->
+<!--                                </div>-->
+<!--                                <br>-->
+<!--                                <form action="" class='mt-5' >-->
+<!--                                    <center>-->
+<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+<!--                                               onkeyup='tabChange(1)' maxlength=1>-->
+<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+<!--                                               onkeyup='tabChange(2)' maxlength=1>-->
+<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+<!--                                               onkeyup='tabChange(3)' maxlength=1>-->
+<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+<!--                                               onkeyup='tabChange(4)' maxlength=1>-->
+<!--                                        <input class="otp" type="text" oninput='digitValidate(this)'-->
+<!--                                               onkeyup='tabChange(5)' maxlength=1>-->
+<!--                                    </center>-->
+
+<!--                                </form>-->
+<!--                                <hr class="mt-4">-->
+<!--                                <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>-->
+<!--                                <br>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </form>
 </div>
 <br>
 <script>
-    let digitValidate = function (ele) {
-        console.log(ele.value);
-        ele.value = ele.value.replace(/[^0-9]/g, '');
-    }
 
-    let tabChange = function (val) {
-        let ele = document.querySelectorAll('input');
-        if (ele[val - 1].value != '') {
-            ele[val].focus()
-        } else if (ele[val - 1].value == '') {
-            ele[val - 2].focus()
-        }
+
+    // let digitValidate = function (ele) {
+    //     console.log(ele.value);
+    //     ele.value = ele.value.replace(/[^0-9]/g, '');
+    // }
+    //
+    // let tabChange = function (val) {
+    //     let ele = document.querySelectorAll('input');
+    //     if (ele[val - 1].value != '') {
+    //         ele[val].focus()
+    //     } else if (ele[val - 1].value == '') {
+    //         ele[val - 2].focus()
+    //     }
+    // }
+    function inputdeta() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var company = document.getElementById("company").value;
+        var tel = document.getElementById("tel").value;
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var pwd = document.getElementById("pwd").value;
+        var cpwd = document.getElementById("cpwd").value;
+console.log(fname)
+        console.log(lname)
+        console.log(company)
+
+        $.post("http://localhost:8081/registeroutput",
+            {
+                name: "Donald Duck",
+                city: "Duckburg"
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        // document.getElementById("demo").innerHTML = fname;
+        // document.getElementById("demo").innerHTML = lname;
+        // document.getElementById("demo").innerHTML = company;
+        // document.getElementById("demo").innerHTML = tel;
+        // document.getElementById("demo").innerHTML = email;
+        // document.getElementById("demo").innerHTML = username;
+        // document.getElementById("demo").innerHTML = pwd;
+        // document.getElementById("demo").innerHTML = cpwd;
+
+
     }
 </script>
+
+
 </body>
 
 </html>
