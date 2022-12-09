@@ -1,7 +1,9 @@
 package com.webraa.demo.controllers;
 
 
+import com.webraa.demo.entities.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -14,7 +16,8 @@ public class AppController {
     }
 
     @GetMapping("register")
-    public String registerRoute() {
+    public String registerRoute(Model model) {
+        model.addAttribute("newUser", new User());
         return "pages/register";
     }
 

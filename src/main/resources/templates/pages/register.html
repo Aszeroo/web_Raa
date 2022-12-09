@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xml:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
+<html xmlns:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
 <style>
     body {
         background: #eee;
@@ -45,10 +45,10 @@
     <br>
     <br>
     <h2>register</h2>
-    <form>
+    <form th:object="${newUser}">
         <div class="form-group">
-            <label for="fname">First Name:</label>
-            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+            <label  th:for="*{firstName}" >First Name:</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" th:field="*{firstName}">
         </div>
         <div class="form-group">
             <label for="lname">Last Name:</label>
