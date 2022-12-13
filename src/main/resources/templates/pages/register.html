@@ -80,25 +80,30 @@
                    th:field="*{username}">
         </div>
 
-
         <div class="form-group">
             <label class="form-label" th:for="*{password}">Password:</label>
             <input type="password" class="form-control" placeholder="Enter password" name="pwd"
                    th:field="*{password}">
         </div>
-        <!--        <div class="form-group">-->
-        <!--            <label for="cpwd">Confirm Password:</label>-->
-        <!--            <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">-->
-        <!--        </div>-->
+                <div class="form-group">
+                    <label for="cpwd">Confirm Password:</label>
+                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">
+                </div>
         <br>
         <div class="container register">
             <p>You Have Account ? Please <a href="/login"> Login</a></p>
         </div>
         <br>
-        <!--        <button type="submit" class="btn btn-primary" data-toggle="modal"-->
-        <!--                data-target=".bd-example-modal-sm" onclick="inputdeta()">Register</button>-->
-        <button type="submit" id="save-user">Register</button>
-        <p id="demo"></p>
+
+<!--        <form class="pure-form">-->
+<!--            <fieldset>-->
+<!--                <input type="password" placeholder="Password" id="password" required>-->
+<!--                <input type="password" placeholder="Confirm Password" id="confirm_password" required>-->
+<!--                <button type="submit" class="pure-button pure-button-primary">Confirm</button>-->
+<!--            </fieldset>-->
+<!--        </form>-->
+<!--        -->
+        <button type="submit" id="save-user" onclick="document.location='/login'">Register</button>
 
         <!--        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"-->
         <!--             aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
@@ -140,22 +145,6 @@
 </div>
 <br>
 <script>
-
-
-    // let digitValidate = function (ele) {
-    //     console.log(ele.value);
-    //     ele.value = ele.value.replace(/[^0-9]/g, '');
-    // }
-    //
-    // let tabChange = function (val) {
-    //     let ele = document.querySelectorAll('input');
-    //     if (ele[val - 1].value != '') {
-    //         ele[val].focus()
-    //     } else if (ele[val - 1].value == '') {
-    //         ele[val - 2].focus()
-    //     }
-    // }
-
     $('#new-user-form').on('submit', function (e) {
         e.preventDefault();
 
@@ -184,54 +173,23 @@
                 console.log("response -> ", response)
             }
         });
-        // }
     });
 
-    // function inputdeta() {
-    //     var fname = document.getElementById("fname").value;
-    //     var lname = document.getElementById("lname").value;
-    //     var company = document.getElementById("company").value;
-    //     var tel = document.getElementById("tel").value;
-    //     var email = document.getElementById("email").value;
-    //     var username = document.getElementById("username").value;
-    //     var pwd = document.getElementById("pwd").value;
-    //     var cpwd = document.getElementById("cpwd").value;
-    //
-    //     var objectRegister = {
-    //         "userId": document.getElementById("username").value,
-    //         "username": document.getElementById("username").value,
-    //         "password": document.getElementById("pwd").value,
-    //         "firstName": document.getElementById("fname").value,
-    //         "lastName": document.getElementById("lname").value,
-    //         "email": document.getElementById("email").value,
-    //         "tel": document.getElementById("tel").value,
-    //         "companyName": document.getElementById("company").value,
-    //
-    //
-    //         "status": document.getElementById("company").value,
-    //
-    //     }
-    //     console.log(objectRegister)
-    //
-    //     $.post("http://localhost:8081/registeroutput",
-    //         {
-    //             name: "Donald Duck",
-    //             city: "Duckburg"
-    //         },
-    //         function (data, status) {
-    //             alert("Data: " + data + "\nStatus: " + status);
-    //         });
-    //     // document.getElementById("demo").innerHTML = fname;
-    //     // document.getElementById("demo").innerHTML = lname;
-    //     // document.getElementById("demo").innerHTML = company;
-    //     // document.getElementById("demo").innerHTML = tel;
-    //     // document.getElementById("demo").innerHTML = email;
-    //     // document.getElementById("demo").innerHTML = username;
-    //     // document.getElementById("demo").innerHTML = pwd;
-    //     // document.getElementById("demo").innerHTML = cpwd;
-    // }
-</script>
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("cpwd");
 
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+
+</script>
 
 </body>
 

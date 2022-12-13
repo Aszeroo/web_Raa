@@ -41,6 +41,11 @@ public class AppController {
         return "pages/Results";
     }
 
+    @GetMapping("index")
+    public String indexRoute() {
+        return "pages/index";
+    }
+
 
 
 
