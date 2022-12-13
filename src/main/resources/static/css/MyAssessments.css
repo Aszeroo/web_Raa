@@ -47,7 +47,11 @@
   }
   
   .dropdown-content a:hover {background-color: #f1f1f1;}
-  
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+table, th, td, tr {
+  border: 2px solid black;
+}

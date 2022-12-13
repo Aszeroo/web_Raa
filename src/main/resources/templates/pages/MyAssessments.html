@@ -10,16 +10,16 @@
 <!----------------- MENU ------------------->
 <th:block th:include="layout/menu"></th:block>
 <!----------------- MENU ------------------->
-<br>
-<h2>My Assessments</h2>
-<br>
-<!--<input type="submit" value="New Assessments">-->
-<button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>
-<br>
 <p></p>
-<table class="w3-table-all">
-
-  <tbody>
+<div class="container">
+  <br>
+  <h2>My Assessments</h2>
+  <br>
+  <!--<input type="submit" value="New Assessments">-->
+  <button class="btn btn-primary" onclick="document.location='/assessment'">New Assessments</button>
+  <br>
+  <br>
+  <table class="table-all" >
     <tr>
       <th style="width:20%;"> Assessment Name </th>
       <th style="width:20%;"> Assessment Type </th>
@@ -36,10 +36,8 @@
       <th style="width:1%;"><button type="button" class="btn btn-warning">Edit</button></th>
       <th style="width:1%;"><button type="button" class="btn btn-danger">Remove</button></th>
     </tr>
-    </tr>
-
-  </tbody>
-</table>
+  </table>
+</div>
 
 <p></p>
 </body>
