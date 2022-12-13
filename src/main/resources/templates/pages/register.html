@@ -45,46 +45,46 @@
     <div class="title">Registration</div>
     <div class="content">
         <form class="needs-validation" id="new-user-form" novalidate th:object="${newUser}">
-            <input type="hidden" th:field="*{userId}">
+            <input type="hidden" th:field="*{userId}" required>
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">First Name</span>
                     <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
-                           th:field="*{firstName}">
+                           th:field="*{firstName}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Last Name</span>
                     <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
-                           th:field="*{lastName}">
+                           th:field="*{lastName}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Company Name</span>
                     <input type="text" class="form-control" placeholder="Enter Company Name" name="company"
-                           th:field="*{companyName}">
+                           th:field="*{companyName}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
                     <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
-                           th:field="*{tel}">
+                           th:field="*{tel}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
                     <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
-                           th:field="*{email}">
+                           th:field="*{email}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Username</span>
                     <input type="text" class="form-control" placeholder="Enter Username" name="username"
-                           th:field="*{username}">
+                           th:field="*{username}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
                     <input type="password" class="form-control" placeholder="Enter password" name="pwd"
-                           th:field="*{password}">
+                           th:field="*{password}" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">
+                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd" required>
                 </div>
             </div>
             <div class="container register">
