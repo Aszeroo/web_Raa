@@ -37,64 +37,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <th:block th:include="layout/js"></th:block>
+    <th:block th:include="layout/css"></th:block>
 </head>
 
 <body>
-
 <div class="container">
-    <h1>DATAONE</h1>
-    <br>
-    <br>
-    <h2>register</h2>
     <form class="needs-validation" id="new-user-form" novalidate th:object="${newUser}">
-        <input type="hidden" th:field="*{userId}">
-        <div class="form-group">
-            <label class="form-label" th:for="*{firstName}">First Name:</label>
-            <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
-                   th:field="*{firstName}">
-        </div>
-        <div class="form-group">
-            <label class="form-label" th:for="*{lastName}">Last Name:</label>
-            <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
-                   th:field="*{lastName}">
-        </div>
-        <div class="form-group">
-            <label class="form-label" th:for="*{companyName}">Company:</label>
-            <input type="text" class="form-control" placeholder="Enter Company" name="company"
-                   th:field="*{companyName}">
-        </div>
-        <div class="form-group">
-            <label class="form-label" th:for="*{tel}">Phone Number:</label>
-            <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
-                   th:field="*{tel}">
-        </div>
-        <div class="form-group">
-            <label class="form-label" th:for="*{email}">E-mail:</label>
-            <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
-                   th:field="*{email}">
-        </div>
-
-        <div class="form-group">
-            <label class="form-label" th:for="*{username}">Username:</label>
-            <input type="text" class="form-control" placeholder="Enter Username" name="username"
-                   th:field="*{username}">
-        </div>
-
-        <div class="form-group">
-            <label class="form-label" th:for="*{password}">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" name="pwd"
-                   th:field="*{password}">
-        </div>
-                <div class="form-group">
+    <input type="hidden" th:field="*{userId}">
+        <div class="title">Registration</div>
+            <div class="content">
+              <div class="user-details">
+                <div class="input-box">
+                    <label class="form-label" th:for="*{firstName}">First Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
+                           th:field="*{firstName}">
+                </div>
+                <div class="input-box">
+                    <label class="form-label" th:for="*{lastName}">Last Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
+                           th:field="*{lastName}">
+                </div>
+                  <div class="input-box">
+                      <label class="form-label" th:for="*{companyName}">Company:</label>
+                      <input type="text" class="form-control" placeholder="Enter Company" name="company"
+                             th:field="*{companyName}">
+                  </div>
+                  <div class="input-box">
+                      <label class="form-label" th:for="*{tel}">Phone Number:</label>
+                      <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
+                             th:field="*{tel}">
+                  </div>
+                <div class="input-box">
+                    <label class="form-label" th:for="*{email}">E-mail:</label>
+                    <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
+                           th:field="*{email}">
+                </div>
+                  <div class="input-box">
+                      <label class="form-label" th:for="*{username}">Username:</label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="username"
+                             th:field="*{username}">
+               </div>
+                <div class="input-box">
+                    <label class="form-label" th:for="*{password}">Password:</label>
+                    <input type="password" class="form-control" placeholder="Enter password" name="pwd"
+                           th:field="*{password}">
+                </div>
+                <div class="input-box">
                     <label for="cpwd">Confirm Password:</label>
                     <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd">
                 </div>
-        <br>
-        <div class="container register">
-            <p>You Have Account ? Please <a href="/login"> Login</a></p>
-        </div>
-        <br>
-
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+            </div>
+        </form>
+    </div>
 <!--        <form class="pure-form">-->
 <!--            <fieldset>-->
 <!--                <input type="password" placeholder="Password" id="password" required>-->
@@ -103,8 +101,6 @@
 <!--            </fieldset>-->
 <!--        </form>-->
 <!--        -->
-        <button type="submit" id="save-user" onclick="document.location='/login'">Register</button>
-
         <!--        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"-->
         <!--             aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
         <!--            <div class="modal-dialog modal-sm">-->
@@ -140,9 +136,6 @@
         <!--                </div>-->
         <!--            </div>-->
         <!--        </div>-->
-
-    </form>
-</div>
 <br>
 <script>
     $('#new-user-form').on('submit', function (e) {
