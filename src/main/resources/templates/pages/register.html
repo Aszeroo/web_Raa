@@ -36,8 +36,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <th:block th:include="layout/js"></th:block>
-    <th:block th:include="layout/css"></th:block>
+    <script th:src="@{/js/register.js}"></script>
+<!--    <th:block th:include="layout/css"></th:block>-->
+    <link rel="stylesheet" type="text/css" th:href="@{css/styleregister.css}">
 </head>
 
 <body>
@@ -50,49 +51,48 @@
                 <div class="input-box">
                     <span class="details">First Name</span>
                     <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
-                           th:field="*{firstName}" required>
+                           required="required" th:field="*{firstName}">
                 </div>
                 <div class="input-box">
                     <span class="details">Last Name</span>
                     <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
-                           th:field="*{lastName}" required>
+                           required="required" th:field="*{lastName}">
                 </div>
                 <div class="input-box">
                     <span class="details">Company Name</span>
                     <input type="text" class="form-control" placeholder="Enter Company Name" name="company"
-                           th:field="*{companyName}" required>
+                           required="required" th:field="*{companyName}">
                 </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
                     <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
-                           th:field="*{tel}" required>
+                           required="required" th:field="*{tel}">
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
                     <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
-                           th:field="*{email}" required>
+                           required="required" th:field="*{email}">
                 </div>
                 <div class="input-box">
                     <span class="details">Username</span>
                     <input type="text" class="form-control" placeholder="Enter Username" name="username"
-                           th:field="*{username}" required>
+                           required="required" th:field="*{username}">
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
                     <input type="password" class="form-control" placeholder="Enter password" name="pwd"
-                           th:field="*{password}" required>
+                           required="required" th:field="*{password}">
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd" required>
+                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd"
+                           required="required">
                 </div>
             </div>
-            <div class="container register">
                 <p>You Have Account ? Please <a href="/login"> Login</a></p>
-            </div>
             <br>
             <div class="button">
-            <input type="submit" id="save-user" onclick="document.location='/login'"></input>
+            <input type="submit" id="save-user" onclick="document.location='/login'"> </input>
             </div>
         </form>
     </div>
