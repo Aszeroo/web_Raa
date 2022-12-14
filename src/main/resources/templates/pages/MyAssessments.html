@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xml:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
+<html xmlns:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
   <head>
     <meta charset="UTF-8">
     <title>MyAssessment</title>
@@ -14,9 +14,12 @@
 <div class="container">
   <br>
   <h2>My Assessments</h2>
+  <h3>User: <span th:text="${username}"></span></h3>
   <br>
   <!--<input type="submit" value="New Assessments">-->
   <button class="btn btn-primary" onclick="document.location='/assessment'">New Assessments</button>
+  <button class="btn btn-primary" th:if="${type} == 'admin'" >Add Question</button>
+
   <br>
   <br>
   <table class="table-all" >
