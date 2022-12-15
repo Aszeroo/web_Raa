@@ -38,7 +38,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script th:src="@{/js/register.js}"></script>
 <!--    <th:block th:include="layout/css"></th:block>-->
-    <link rel="stylesheet" type="text/css" th:href="@{css/styleregister.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/Styleregister.css}">
 </head>
 
 <body>
@@ -89,11 +89,18 @@
                            required="required">
                 </div>
             </div>
-                <p>You Have Account ? Please <a href="/login"> Login</a></p>
-            <br>
             <div class="button">
-            <input type="submit" id="save-user" onclick="document.location='/login'"> </input>
+                <input type="submit" id="save-user" onclick="document.location='/login'"> </input>
             </div>
+
+<!--            <p>You Have Account ? Please <a href="/login"> Login</a></p>-->
+
+            <div class="login-signup">
+                    <span class="text">You Have Account ? Please
+                        <a href="/login" class="text signup-link">Login Now</a>
+                    </span>
+            </div>
+
         </form>
     </div>
 </div>
@@ -140,7 +147,7 @@
         <!--                </div>-->
         <!--            </div>-->
         <!--        </div>-->
-<br>
+
 <script>
     $('#new-user-form').on('submit', function (e) {
         e.preventDefault();
