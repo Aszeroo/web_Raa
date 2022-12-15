@@ -1,33 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
-<style>
-    body {
-        background: #eee;
-    }
-
-    .bgWhite {
-        background: white;
-        box-shadow: 0px 3px 6px 0px #cacaca;
-    }
-
-    .title {
-        font-weight: 600;
-        margin-top: 20px;
-        font-size: 24px
-    }
-
-    .customBtn {
-        border-radius: 0px;
-        padding: 10px;
-    }
-
-    .otp {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-    }
-</style>
 <head>
     <title>Register</title>
     <meta charset="utf-8">
@@ -36,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script th:src="@{/js/register.js}"></script>
 <!--    <th:block th:include="layout/css"></th:block>-->
     <link rel="stylesheet" type="text/css" th:href="@{css/Styleregister.css}">
 </head>
@@ -92,9 +63,6 @@
             <div class="button">
                 <input type="submit" id="save-user" onclick="document.location='/login'"> </input>
             </div>
-
-<!--            <p>You Have Account ? Please <a href="/login"> Login</a></p>-->
-
             <div class="login-signup">
                     <span class="text">You Have Account ? Please
                         <a href="/login" class="text signup-link">Login Now</a>
@@ -147,54 +115,7 @@
         <!--                </div>-->
         <!--            </div>-->
         <!--        </div>-->
-
-<script>
-    $('#new-user-form').on('submit', function (e) {
-        e.preventDefault();
-
-        var objectRegister = {
-            "username": $('#username').val(),
-            "password": $('#password').val(),
-            "firstName": $('#firstName').val(),
-            "lastName": $('#lastName').val() ,
-            "email": $('#email').val() ,
-            "tel": $('#tel').val() ,
-            "companyName": $('#companyName').val(),
-            "status": "active",
-        }
-        $.ajax({
-            type: 'POST',
-            async: false,
-            dataType: 'text',
-            data: JSON.stringify(objectRegister),
-            contentType: 'application/json; charset=utf-8',
-            url: '/apis/user/save',
-            success: function (data, textStatus) {
-                console.log("data -> ", data)
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                var response = JSON.parse(xhr.responseText);
-                console.log("response -> ", response)
-            }
-        });
-    });
-
-    var password = document.getElementById("password")
-        , confirm_password = document.getElementById("cpwd");
-
-    function validatePassword(){
-        if(password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-
-</script>
-
+<script th:src="@{/js/register.js}"></script>
 </body>
 
 </html>

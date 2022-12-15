@@ -5,22 +5,21 @@
     <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" type="text/css" th:href="@{css/login.css}">
-<!--    <script th:src="@{/js/login.js}"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/login.css}">
+
 </head>
 <body>
     <div class="container">
         <div class="forms">
             <div class="form login">
                 <form class="needs-validation" id="login-user-form" novalidate th:object="${loginUser}">
-
-                    <span class="title">Login</span>
-
+                    <div class="title">Login</div>
                         <div class="input-field">
                             <input type="text" name="email" id="email" placeholder="Enter a valid email address">
+                            <i class="uil uil-envelope icon"></i>
                         </div>
 
                         <div class="input-field">
@@ -51,76 +50,7 @@
             </div>
         </div>
     </div>
-<script>
-
-    const container = document.querySelector(".container"),
-        pwShowHide = document.querySelectorAll(".showHidePw"),
-        pwFields = document.querySelectorAll(".password"),
-        signUp = document.querySelector(".signup-link"),
-        login = document.querySelector(".login-link");
-
-    //   js code to show/hide password and change icon
-    pwShowHide.forEach(eyeIcon =>{
-        eyeIcon.addEventListener("click", ()=>{
-            pwFields.forEach(pwField =>{
-                if(pwField.type ==="password"){
-                    pwField.type = "text";
-
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye-slash", "uil-eye");
-                    })
-                }else{
-                    pwField.type = "password";
-
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye", "uil-eye-slash");
-                    })
-                }
-            })
-        })
-    })
-
-    // js code to appear signup and login form
-    // signUp.addEventListener("click", ( )=>{
-    //     container.classList.add("active");
-    // });
-    // login.addEventListener("click", ( )=>{
-    //     container.classList.remove("active");
-    // });
-
-    $('#login-user-form').on('submit', function (e) {
-        e.preventDefault();
-        var objectLogin = {
-            "email": $('#email').val(),
-            "password": $('#password').val()
-        }
-        $.ajax({
-            type: 'POST',
-            async: false,
-            dataType: 'text',
-            data: JSON.stringify(objectLogin),
-            contentType: 'application/json; charset=utf-8',
-            url: '/apis/user/login',
-            success: function (data, textStatus) {
-                console.log("data -> ", data)
-                var response = JSON.parse(data)
-                if (response.data.status) {
-
-                    alert("status : success description : " + response.data.description)
-                    location.href = "/MyAssessments"
-
-                } else {
-                    alert("status : fail description : " + response.data.description)
-                }
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                var response = JSON.parse(xhr.responseText);
-                console.log("response -> ", response)
-            }
-        });
-    });
-
-</script>
+    <script th:src="@{/js/login.js}"></script>
 </body>
 
 </html>

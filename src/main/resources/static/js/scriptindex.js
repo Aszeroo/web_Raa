@@ -21,7 +21,7 @@ const container = document.querySelector(".container"),
                         icon.classList.replace("uil-eye", "uil-eye-slash");
                     })
                 }
-            }) 
+            })
         })
     })
 
