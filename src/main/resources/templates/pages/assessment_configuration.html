@@ -34,24 +34,21 @@
                     <label for="assessment_Data">Assessment Data:</label>
                     <input type="datetime-local" class="form-control" id="assessment_Data" placeholder="Enter Assessment Data" name="assessment_Data">
                 </div>
-                <div class="form-group">
-                    <label for="facility_Name">Facility Name:</label>
-                    <input type="text" class="form-control" id="facility_Name" placeholder="Enter Facility Name" name="facility_Name">
-                </div>
-                <div class="form-group">
-                    <label for="city">City Or Site Name:</label>
-                    <input type="text" class="form-control" id="city" placeholder="Enter City Or Site Name" name="city">
-                </div>
-                <div class="form-group">
-                    <label for="spr">State/Province/Region:</label>
-                    <input type="text" class="form-control" id="spr" placeholder="Enter State/Province/Region" name="spr">
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="facility_Name">Facility Name:</label>-->
+<!--                    <input type="text" class="form-control" id="facility_Name" placeholder="Enter Facility Name" name="facility_Name">-->
+<!--                </div>-->
+<!--&lt;!&ndash;                <div class="form-group">&ndash;&gt;-->
+<!--                    <label for="city">City Or Site Name:</label>-->
+<!--                    <input type="text" class="form-control" id="city" placeholder="Enter City Or Site Name" name="city">-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="spr">State/Province/Region:</label>-->
+<!--                    <input type="text" class="form-control" id="spr" placeholder="Enter State/Province/Region" name="spr">-->
+<!--                </div>-->
                 <br>
                 </form>
             </div>
-
-                    <!-- Button trigger modal -->
-
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         <span class="btnText">Next</span>
         <i class="uil uil-navigator"></i>
@@ -211,25 +208,22 @@
                         <br>
                         language is too complex and suggest alternate wording.
                     </div>
-                </div>
-
-                <div class="modal-footer">
+                    <br>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
-                        <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+                        <label class="form-check-label" for="defaultCheck1">Please Check to continue</label>
                     </div>
-
-                    <button type="button" class="btn btn-primary" onclick="document.location='/assessment'">Confirm</button>
-
-
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary left" onclick="document.location='/assessment'">Yes</button>
+                        <button type="button" class="btn btn-primary right" onclick="document.location='/MyAssessments'">No</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-                </div>
-            </div>
-        </div>
-    </form>
+</form>
+</div>
 </body>
 </html>
 

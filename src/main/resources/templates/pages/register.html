@@ -6,69 +6,65 @@
     <meta name="author" content="Softnio">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!--    <th:block th:include="layout/css"></th:block>-->
+    <!--    <th:block th:include="layout/css"></th:block>-->
+    <th:block th:include="layout/js"></th:block>
     <link rel="stylesheet" type="text/css" th:href="@{css/Styleregister.css}">
 </head>
-
 <body>
 <div class="container">
     <div class="title">Registration</div>
     <div class="content">
         <form class="needs-validation" id="new-user-form" novalidate th:object="${newUser}">
-            <input type="hidden" th:field="*{userId}" required>
+            <input type="hidden" th:field="*{userId}">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">First Name</span>
-                    <input type="text" class="form-control" placeholder="Enter First Name" name="fname"
-                           required="required" th:field="*{firstName}">
+                    <input type="text" placeholder="Enter First Name" name="fname"
+                            th:field="*{firstName}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Last Name</span>
-                    <input type="text" class="form-control" placeholder="Enter Last Name" name="lname"
-                           required="required" th:field="*{lastName}">
+                    <input type="text"  placeholder="Enter Last Name" name="lname"
+                            th:field="*{lastName}" required />
                 </div>
                 <div class="input-box">
-                    <span class="details">Company Name</span>
-                    <input type="text" class="form-control" placeholder="Enter Company Name" name="company"
-                           required="required" th:field="*{companyName}">
+                    <span class="details">Facility Name</span>
+                    <input type="text" placeholder="Facility Name" name="company"
+                            th:field="*{companyName}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="text" class="form-control" placeholder="Enter Phone Number" name="tel"
-                           required="required" th:field="*{tel}">
+                    <input type="text" placeholder="Enter Phone Number" name="tel"
+                            th:field="*{tel}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" class="form-control" placeholder="Enter E-mail" name="email"
-                           required="required" th:field="*{email}">
+                    <input type="text" placeholder="Enter E-mail" name="email"
+                            th:field="*{email}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Username</span>
-                    <input type="text" class="form-control" placeholder="Enter Username" name="username"
-                           required="required" th:field="*{username}">
+                    <input type="text" placeholder="Enter Username" name="username"
+                            th:field="*{username}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" class="form-control" placeholder="Enter password" name="pwd"
-                           required="required" th:field="*{password}">
+                    <input type="password" placeholder="Enter password" name="pwd"
+                            th:field="*{password}" required />
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Confirm Password" name="cpwd"
-                           required="required">
+                    <input type="password" id="cpwd" placeholder="Enter Confirm Password" name="cpwd" required />
                 </div>
             </div>
             <div class="button">
-                <input type="submit" id="save-user" onclick="document.location='/login'"> </input>
+                <input type="submit" id="save-user" onclick="document.location='/login'"/>
             </div>
             <div class="login-signup">
                     <span class="text">You Have Account ? Please
                         <a href="/login" class="text signup-link">Login Now</a>
                     </span>
             </div>
-
         </form>
     </div>
 </div>

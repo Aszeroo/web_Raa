@@ -46,7 +46,29 @@ function validatePassword(){
         confirm_password.setCustomValidity('');
     }
 }
-
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+
+const input = document.getElementById('firstName,lastName,companyName,tel,email,username,password,cpwd');
+input.setAttribute('required', '');
+
+// function toggleButton1() {
+//
+//     var firstName = document.getElementById('firstName').value;
+//     var lastName = document.getElementById('lastName').value;
+//     var companyName = document.getElementById('companyName').value;
+//     var tel = document.getElementById('tel').value;
+//     var email = document.getElementById('email').value;
+//     var username = document.getElementById('username').value;
+//     var password = document.getElementById('password').value;
+//     var cpwd = document.getElementById('cpwd').value;
+//
+//     if (firstName && lastName && companyName && tel && email && username && password && cpwd) {
+//         document.getElementById('save-add-role').disabled = false;
+//     } else
+//
+//     {
+//         document.getElementById('save-add-role').disabled = true;
+//     }
+// }
 
