@@ -33,7 +33,7 @@ public class AppController {
         model.addAttribute("lastname", session.getAttribute("lastname"));
         model.addAttribute("companyName", session.getAttribute("companyName"));
         model.addAttribute("type", session.getAttribute("type"));
-        return "pages/MyAssessments";
+        return "history";
     }
 
     @GetMapping("assessment_configuration")
@@ -41,9 +41,9 @@ public class AppController {
         return "pages/assessment_configuration";
     }
 
-    @GetMapping("assessment")
-    public String assessmentRoute() {
-        return "pages/assessment";
+    @GetMapping("history")
+    public String historyRoute() {
+        return "pages/history";
     }
 
     @GetMapping("Results")
@@ -56,6 +56,10 @@ public class AppController {
         return "pages/index";
     }
 
+    @GetMapping("landingpage")
+    public String landingpageRoute() {
+        return "pages/landingpage";
+    }
 
 
 

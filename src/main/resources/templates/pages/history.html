@@ -2,23 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>MyAssessment</title>
+    <title>History | Page</title>
     <th:block th:include="layout/css"></th:block>
-    <link rel="stylesheet" type="text/css" th:href="@{css/MyAssessments.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
     <th:block th:include="layout/js"></th:block>
   </head>
 <body>
 <!----------------- MENU ------------------->
 <th:block th:include="layout/menu"></th:block>
 <!----------------- MENU ------------------->
-<p></p>
+<p></p><x></x>
 <div class="container">
   <br>
-  <h2>My Assessments</h2>
+  <center><h3>History</h3></center>
   <h3>User: <span th:text="${username}"></span></h3>
   <!--<input type="submit" value="New Assessments">-->
-  <button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>
-<!--  <button class="btn btn-primary" th:if="${type} == 'admin'" >Add Question</button>-->
+<!--  <button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>-->
   <button type="button" class="btn btn-primary" th:if="${type} == 'admin'" data-toggle="modal" data-target="#exampleModalLong">
     <span class="btnText">Add Question</span>
     <i class="uil uil-navigator"></i>
@@ -48,58 +47,30 @@
       </div>
     </div>
   </div>
-</div>
-</form>
-</div>
-<div class="container">
-  <table>
-    <thead>
-    <tr>
-      <th>Column 1</th>
-      <th>Column 2</th>
-      <th>Column 3</th>
-      <th>Column 4</th>
-      <th>Column 5</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Cell 1</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    <tr>
-      <td>Cell 1</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    <tr>
-      <td>Cell 1</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    <tr>
-      <td>Cell 1</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    <tr>
-      <td>Cell 1</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-wrapper">
+    <br>
+    <table class="fl-table">
+      <thead>
+      <tr>
+        <th> Assessment Name </th>
+        <th> Assessment Type </th>
+        <th> Last Modified </th>
+        <th> Primary Assessor </th>
+        <th> Status </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td> dekfewz </td>
+        <td> RRA </td>
+        <td> 21-Nov-2022 </td>
+        <td> Primary Assessor </td>
+        <td> 0/48 Question(s) Completed </td>
+        <td><button class="btn-danger">Remove</button><button class="btn-warning">Analytics</button> </td>
+      </tr>
+      <tbody>
+    </table>
+  </div>
 </div>
 
 <p></p>
