@@ -5,12 +5,16 @@
     <title>Landing Page</title>
     <th:block th:include="layout/css"></th:block>
     <th:block th:include="layout/js"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{css/landingpage.css}">
+
     <th:block th:include="layout/menu"></th:block>
 </head>
 <body>
-<div class="contain">
-    <h1>Landing Page | Home</h1>
-    <button class="btn-primary" onclick="document.location='/assessment'"> Ransomware Readiness Assessment </button>
+<div class="container">
+
+        <h1>Landing Page | Home</h1>
+        <button class="btn-primary" onclick="document.location='/assessment'"> Ransomware Readiness Assessment </button>
+
 </div>
 
 </body>

@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/" class="loading" lang="en" data-textdirection="ltr">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>History | Page</title>
     <th:block th:include="layout/css"></th:block>
     <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
     <th:block th:include="layout/js"></th:block>
-  </head>
+</head>
 <body>
 <!----------------- MENU ------------------->
 <th:block th:include="layout/menu"></th:block>
 <!----------------- MENU ------------------->
 <p></p><x></x>
 <div class="container">
-  <br>
-  <center><h3>History</h3></center>
-  <h3>User: <span th:text="${username}"></span></h3>
-  <!--<input type="submit" value="New Assessments">-->
-<!--  <button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>-->
-  <button type="button" class="btn btn-primary" th:if="${type} == 'admin'" data-toggle="modal" data-target="#exampleModalLong">
-    <span class="btnText">Add Question</span>
-    <i class="uil uil-navigator"></i>
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLongTitle">Ransomware Readiness Tutorial</h4>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button> -->
-          <span class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</span>
-        </div>
-        <div class="modal-body">
-          <div class="panel-body">
-          </div>
-          <br>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
-            <label class="form-check-label" for="defaultCheck1">Please Check to continue</label>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary left" onclick="document.location='/assessment'">Yes</button>
-          <button type="button" class="btn btn-primary right" onclick="document.location='/MyAssessments'">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="table-wrapper">
     <br>
-    <table class="fl-table">
-      <thead>
-      <tr>
-        <th> Assessment Name </th>
-        <th> Assessment Type </th>
-        <th> Last Modified </th>
-        <th> Primary Assessor </th>
-        <th> Status </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td> dekfewz </td>
-        <td> RRA </td>
-        <td> 21-Nov-2022 </td>
-        <td> Primary Assessor </td>
-        <td> 0/48 Question(s) Completed </td>
-        <td><button class="btn-danger">Remove</button><button class="btn-warning">Analytics</button> </td>
-      </tr>
-      <tbody>
-    </table>
-  </div>
+    <center><h3>History</h3></center>
+    <h3>User: <span th:text="${username}"></span></h3>
+    <!--<input type="submit" value="New Assessments">-->
+    <!--  <button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>-->
+    <button type="button" class="btn btn-primary" th:if="${type} == 'admin'" data-toggle="modal" data-target="#exampleModalLong">
+        <span class="btnText">Add Question</span>
+        <i class="uil uil-navigator"></i>
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Ransomware Readiness Tutorial</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button> -->
+                    <span class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="panel-body">
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                        <label class="form-check-label" for="defaultCheck1">Please Check to continue</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary left" onclick="document.location='/assessment'">Yes</button>
+                    <button type="button" class="btn btn-primary right" onclick="document.location='/MyAssessments'">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <br>
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th> Assessment Name </th>
+                <th> Assessment Type </th>
+                <th> Last Modified </th>
+                <th> Primary Assessor </th>
+                <th> Status </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> dekfewz </td>
+                <td> RRA </td>
+                <td> 21-Nov-2022 </td>
+                <td> Primary Assessor </td>
+                <td> 0/48 Question(s) Completed </td>
+                <td><button class="btn-danger">Remove</button><button class="btn-warning">Analytics</button> </td>
+            </tr>
+            <tbody>
+        </table>
+    </div>
 </div>
 
 <p></p>
