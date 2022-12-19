@@ -54,6 +54,7 @@
                     alert("status : success description : " + response.data.description)
                     location.href = "/landingpage"
 
+
                 } else {
                     alert("status : fail description : " + response.data.description)
                 }

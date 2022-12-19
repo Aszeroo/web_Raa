@@ -26,35 +26,35 @@ public class AppController {
         return "pages/register";
     }
 
-    @GetMapping("MyAssessments")
-    public String MyAssessmentsRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
+    @GetMapping("history")
+    public String historyRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
         model.addAttribute("username", session.getAttribute("username"));
         model.addAttribute("firstname", session.getAttribute("firstname"));
         model.addAttribute("lastname", session.getAttribute("lastname"));
         model.addAttribute("companyName", session.getAttribute("companyName"));
         model.addAttribute("type", session.getAttribute("type"));
-        return "history";
-    }
-
-    @GetMapping("assessment_configuration")
-    public String assessment_configurationRoute() {
-        return "pages/assessment_configuration";
-    }
-
-    @GetMapping("history")
-    public String historyRoute() {
         return "pages/history";
     }
+
+//    @GetMapping("assessment_configuration")
+//    public String assessment_configurationRoute() {
+//        return "pages/assessment_configuration";
+//    }
+
+//    @GetMapping("history")
+//    public String historyRoute() {
+//        return "pages/history";
+//    }
 
     @GetMapping("Results")
     public String ResultsRoute() {
         return "pages/Results";
     }
 
-    @GetMapping("index")
-    public String indexRoute() {
-        return "pages/index";
-    }
+//    @GetMapping("index")
+//    public String indexRoute() {
+//        return "pages/index";
+//    }
 
     @GetMapping("landingpage")
     public String landingpageRoute() {
