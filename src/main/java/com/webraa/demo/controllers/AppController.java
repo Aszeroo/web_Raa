@@ -61,6 +61,11 @@ public class AppController {
         return "pages/landingpage";
     }
 
+    @GetMapping("assessment")
+    public String assessmentRoute() {
+        return "pages/assessment";
+    }
+
 
 
 }
