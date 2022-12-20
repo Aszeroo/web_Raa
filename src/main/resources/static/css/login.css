@@ -34,8 +34,6 @@ body{
     width: 200%;
     transition: height 0.2s ease;
 }
-
-
 .container .form{
     width: 50%;
     padding: 30px;
@@ -171,7 +169,7 @@ body{
 }
 
 .button input:hover{
-    background-color: #F7941C;
+    background-color: #f7941c;
 }
 
 .form .login-signup{
