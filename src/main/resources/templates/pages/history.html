@@ -11,13 +11,10 @@
 <!----------------- MENU ------------------->
 <th:block th:include="layout/menu"></th:block>
 <!----------------- MENU ------------------->
-<p></p><x></x>
 <div class="container">
     <br>
     <center><h3>History</h3></center>
-    <h3>User: <span th:text="${username}"></span></h3>
-    <!--<input type="submit" value="New Assessments">-->
-    <!--  <button class="btn btn-primary" onclick="document.location='/assessment_configuration'">New Assessments</button>-->
+    <h3>User: <span th:text="${email}"></span></h3>
     <button type="button" class="btn btn-primary" th:if="${type} == 'admin'" data-toggle="modal" data-target="#exampleModalLong">
         <span class="btnText">Add Question</span>
         <i class="uil uil-navigator"></i>
@@ -47,30 +44,33 @@
             </div>
         </div>
     </div>
+    <!-- EndModal -->
+
+    <!-- Table -->
     <div class="table-wrapper">
         <br>
         <table class="fl-table">
             <thead>
             <tr>
-                <th> Assessment Name </th>
-                <th> Assessment Type </th>
-                <th> Last Modified </th>
-                <th> Primary Assessor </th>
+                <th> Assessment Id </th>
+                <th> Assessment Topic </th>
+                <th> Date </th>
                 <th> Status </th>
+                <th>  </th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td> dekfewz </td>
+                <td> 1 </td>
                 <td> RRA </td>
                 <td> 21-Nov-2022 </td>
-                <td> Primary Assessor </td>
-                <td> 0/48 Question(s) Completed </td>
-                <td><button class="btn-danger">Remove</button><button class="btn-warning">Analytics</button> </td>
+                <td> Succeed </td>
+                <td><button class="btn-warning">Results</button> </td>
             </tr>
             <tbody>
         </table>
     </div>
+    <!-- EndTable -->
 </div>
 
 <p></p>
