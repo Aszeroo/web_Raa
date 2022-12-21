@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+body {
+  height: 100%;
+  background-color: #F7941C;
+  direction: ltr;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -9,7 +16,7 @@
   position: relative;
   max-width: 100%;
   width: 100%;
-  background: #f8f8f8;
+  background: #F7941C;
   margin: 0 15px;
   padding: 10px 20px;
   border-radius: 7px;

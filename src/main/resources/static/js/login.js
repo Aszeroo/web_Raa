@@ -51,7 +51,7 @@
                 var response = JSON.parse(data)
                 if (response.data.status) {
 
-                    alert("status : success description : " + response.data.description)
+                    // alert("status : success description : " + response.data.description)
                     location.href = "/landingpage"
 
 
