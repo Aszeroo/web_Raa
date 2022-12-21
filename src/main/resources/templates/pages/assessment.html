@@ -5,7 +5,6 @@
     <title>Assessment</title>
     <link rel="stylesheet" type="text/css" th:href="@{css/OrganizationDetails.css}">
     <th:block th:include="layout/css"></th:block>
-    <th:block th:include="layout/js"></th:block>
 </head>
     <body>
 <!----------------- MENU ------------------->
@@ -2124,7 +2123,10 @@
                     </div>
                 </section>
             <button class="btn btn-primary" onclick="document.location='/Results'">Next</button>
+
         </div>
     <br>
+<th:block th:include="layout/js"></th:block>
+
     </body>
 </html>
