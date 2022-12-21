@@ -5,7 +5,7 @@
     <title>History | Page</title>
     <th:block th:include="layout/css"></th:block>
     <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
-    <th:block th:include="layout/js"></th:block>
+
 </head>
 <body>
 <!----------------- MENU ------------------->
@@ -14,7 +14,7 @@
 <div class="container">
     <br>
     <center><h3>History</h3></center>
-    <h3>User: <span th:text="${email}"></span></h3>
+    <h3>User: <span th:text="${username}"></span></h3>
     <button type="button" class="btn btn-primary" th:if="${type} == 'admin'" data-toggle="modal" data-target="#exampleModalLong">
         <span class="btnText">Add Question</span>
         <i class="uil uil-navigator"></i>
@@ -74,6 +74,7 @@
 </div>
 
 <p></p>
+<th:block th:include="layout/js"></th:block>
 </body>
 
 
