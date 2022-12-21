@@ -26,10 +26,10 @@ public class AppController {
         return "pages/register";
     }
 
-    @GetMapping("assessment_configuration")
-    public String assessment_configurationRoute() {
-        return "pages/assessment_configuration";
-    }
+//    @GetMapping("assessment_configuration")
+//    public String assessment_configurationRoute() {
+//        return "pages/assessment_configuration";
+//    }
 
     @GetMapping("history")
     public String historyRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
@@ -46,10 +46,10 @@ public class AppController {
         return "pages/Results";
     }
 
-    @GetMapping("index")
-    public String indexRoute() {
-        return "pages/index";
-    }
+//    @GetMapping("index")
+//    public String indexRoute() {
+//        return "pages/index";
+//    }
 
     @GetMapping("landingpage")
     public String landingpageRoute() {
