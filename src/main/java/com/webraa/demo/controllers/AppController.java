@@ -57,10 +57,12 @@ public class AppController {
     }
 
     @GetMapping("assessment")
-    public String assessmentRoute() {
-        return "pages/assessment";
-    }
+    public String assessmentRoute() { return "pages/assessment"; }
 
+    @GetMapping("changepassword")
+    public String changepasswordRoute() {
+        return "pages/changepassword";
+    }
 
 
 }
