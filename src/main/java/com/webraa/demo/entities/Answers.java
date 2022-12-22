@@ -37,4 +37,5 @@ public class Answers {
     private Date updateDate;
     private String updateBy;
     private String answerStatus;
+    private String topicId;
 }
