@@ -64,5 +64,4 @@ $.each( properties, function( i, val ) {
 
         return false;
     });
-
 });

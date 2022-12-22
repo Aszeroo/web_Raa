@@ -5,7 +5,8 @@
     <title>History | Page</title>
     <th:block th:include="layout/css"></th:block>
     <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
-
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+<!--    <link rel="stylesheet" type="text/css" th:href="@{css/util.css}">-->
 </head>
 <body>
 <!----------------- MENU ------------------->
@@ -44,36 +45,38 @@
             </div>
         </div>
     </div>
-    <!-- EndModal -->
-
-    <!-- Table -->
-    <div class="table-wrapper">
-        <br>
-        <table class="fl-table">
-            <thead>
-            <tr>
-                <th> Assessment Id </th>
-                <th> Assessment Topic </th>
-                <th> Date </th>
-                <th> Status </th>
-                <th>  </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td> 1 </td>
-                <td> RRA </td>
-                <td> 21-Nov-2022 </td>
-                <td> Succeed </td>
-                <td><button class="btn-warning">Results</button> </td>
-            </tr>
-            <tbody>
-        </table>
-    </div>
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+                        <tr class="row100 head">
+                            <th class="cell100 column1">Assessment Id</th>
+                            <th class="cell100 column2">Assessment Topic</th>
+                            <th class="cell100 column3">Date</th>
+                            <th class="cell100 column4">Status</th>
+                            <th class="cell100 column5"></th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                        <tr class="row100 body">
+                            <td class="cell100 column1">1</td>
+                            <td class="cell100 column2">RRA</td>
+                            <td class="cell100 column3">21-Nov-2022</td>
+                            <td class="cell100 column4">Succeed</td>
+                            <td class="cell100 column5"><button class="btn-warning">Results</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
     <!-- EndTable -->
-</div>
-
-<p></p>
+    </div>
 <th:block th:include="layout/js"></th:block>
 </body>
 
