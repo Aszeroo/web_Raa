@@ -39,4 +39,11 @@ public class AnswersServiceImpl implements AnswersService {
 
         return (List<Answers>) answersRepository.saveAll(answers);
     }
+
+    @Override
+    public List<String> summaryAnswer(String username) {
+        List<String> summation = answersRepository.summaryAnswer(username);
+
+        return answersRepository.summaryAnswer(username);
+    }
 }

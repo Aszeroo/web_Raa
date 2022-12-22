@@ -42,6 +42,17 @@ public class AnswersController {
         }
     }
 
+    @RequestMapping(value = "summary-answer/{username}", method = RequestMethod.GET)
+    public ResponseEntity<?> summaryAnswer(HttpServletRequest request, HttpServletResponse response, HttpSession session, @PathVariable String username) {
+        try {
+            return ResponseEntity.ok(new ApiResponseSuccess("Find Answers successful.", answersService.summaryAnswer(username)));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return ResponseEntity.internalServerError().body(new ApiResponseError("US0002" +
+                    "", "Can not find new answers"));
+        }
+    }
+
 
 
 }
