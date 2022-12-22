@@ -25,8 +25,6 @@ public class Answers {
     )
     private String answerId;
     private String questionId;
-    private String choiceId;
-    private String testId;
     private String answer;
     private String answerDiscription;
     private String comment;
