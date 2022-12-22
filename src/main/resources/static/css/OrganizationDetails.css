@@ -116,3 +116,6 @@
   transform: translateX(-50%) rotate(45deg);
 
 }
+.hide{
+  display: none;
+}
