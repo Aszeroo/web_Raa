@@ -57,7 +57,12 @@ public class AppController {
     }
 
     @GetMapping("assessment")
-    public String assessmentRoute() {
+    public String assessmentRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
+        model.addAttribute("username",session.getAttribute("username"));
+        model.addAttribute("firstname",session.getAttribute("firstname"));
+        model.addAttribute("lastname",session.getAttribute("lastname"));
+        model.addAttribute("companyName",session.getAttribute("companyName"));
+        model.addAttribute("type",session.getAttribute("type"));
         return "pages/assessment";
     }
 
