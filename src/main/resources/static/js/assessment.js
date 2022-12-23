@@ -105,7 +105,7 @@ function saveanswer() {
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function () {
-            // window.location.href = "/Results"
+            window.location.href = "/Results"
         },
     });
 }
