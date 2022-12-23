@@ -62,6 +62,7 @@ function onSignup() {
 
     };
 
+
     xhttp.open("GET", "ajax_info.txt", true);
     xhttp.send();
 }

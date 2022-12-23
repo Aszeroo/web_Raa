@@ -50,6 +50,10 @@ public class AppController {
 //    public String indexRoute() {
 //        return "pages/index";
 //    }
+    @GetMapping("changepassword")
+    public String changepasswordRoute() {
+    return "pages/changepassword";
+}
 
     @GetMapping("landingpage")
     public String landingpageRoute() {
