@@ -54,7 +54,7 @@ public class AppController {
     public String changepasswordRoute() {
     return "pages/changepassword";
 }
-
+///
     @GetMapping("landingpage")
     public String landingpageRoute() {
         return "pages/landingpage";
