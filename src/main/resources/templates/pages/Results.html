@@ -4,148 +4,83 @@
     <meta charset="UTF-8">
     <title>Results</title>
     <th:block th:include="layout/css"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/util.css}">
 </head>
 <body>
 <!----------------- MENU ------------------->
 <th:block th:include="layout/menu"></th:block>
 <!----------------- MENU ------------------->
 <br>
-<h1>Goal Performance</h1>
-<!--<div class="container">-->
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Robust Data Backup (DB)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per DB">-->
-<!--                        <span class="tooltip">90%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
 
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Web Browser Management and DNS Filtering (BM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per BM">-->
-<!--                        <span class="tooltip">70%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Phishing Prevention and Awareness (PP)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per PP">-->
-<!--                        <span class="tooltip">50%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Network Perimeter Monitoring (NM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per NM">-->
-<!--                        <span class="tooltip">30%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Asset Management (AM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per AM">-->
-<!--                        <span class="tooltip">30%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">User and Access Management (UM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per UM">-->
-<!--                        <span class="tooltip">20%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Patch and Update Management (PM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per PM">-->
-<!--                        <span class="tooltip">30%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Application Integrity and Allowlist (AI)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per AI">-->
-<!--                        <span class="tooltip">30%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Incident Response (IR)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per IR">-->
-<!--                        <span class="tooltip">5%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="skill-box">-->
-<!--            <span class="title">Risk Management (RM)</span>-->
-<!--            <br>-->
-<!--            <div class="skill-bar">-->
-<!--                    <span class="skill-per RM">-->
-<!--                        <span class="tooltip">10%</span>-->
-<!--                    </span>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </div>-->
+<br>
+<div class="container">
     <br>
-    <div class="container">
-        <h3>RRA Practice Scoring</h3>
-    </div>
-    <div class="container">
-        <div class="form-group">
-            <table id="tableanswer">
-                <thead>
-                <tr>
-                    <th style="width:20%;"> Topic</th>
-                    <th style="width:1%;"> Yes </th>
-                    <th style="width:1%;"> No </th>
-                    <th style="width:5%;"> Total Practices </th>
-                    <th style="width:5%;"> Percent Complete </th>
-                </tr>
-                    </thead>
-                <tbody>
-                <tr th:each="list: ${listAns}">
-                    <td th:text="${list.topic_name}" />
-                    <td th:text="${list.yes}" />
-                    <td th:text="${list.no}" />
-                    <td th:text="${list.total}" />
-                    <td th:text="${list.percent}" />
-                </tr>
-                </tbody>
+    <h3>Goal Performance</h3>
+    <br>
 
-            </table>
+    <div class="form-group">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">Ransomware Readiness Tutorial</h4>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button> -->
+                        <span class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel-body">
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                            <label class="form-check-label" for="defaultCheck1">Please Check to continue</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary left" onclick="document.location='/assessment'">Yes</button>
+                        <button type="button" class="btn btn-primary right" onclick="document.location='/MyAssessments'">No</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <br><br><br>
-    <br><br><br>
+        <div class="container-table100">
+            <div class="wrap-table100 center">
+                <div class="table100 ver1 m-b-110">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1"> Topic</th>
+                                <th class="cell100 column2"> Yes</th>
+                                <th class="cell100 column3"> No</th>
+                                <th class="cell100 column4"> Total Practices</th>
+                                <th class="cell100 column5"> Percent Complete</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table100-body js-pscroll">
+                        <table>
+                            <tbody>
+                                <tr class="row100 body" th:each="list: ${listAns}">
+                                    <td class="cell100 column1" th:text="${list.topic_name}"/>
+                                    <td class="cell100 column2" th:text="${list.yes}"/>
+                                    <td class="cell100 column3" th:text="${list.no}"/>
+                                    <td class="cell100 column4" th:text="${list.total}"/>
+                                    <td class="cell100 column5" th:text="${list.percent}"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br><br><br>
 </div>
 <th:block th:include="layout/js"></th:block>
 <script th:src="@{/js/assessment.js}"></script>
+</div>
 </body>
 </html>

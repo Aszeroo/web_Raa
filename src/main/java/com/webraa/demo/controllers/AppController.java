@@ -55,15 +55,6 @@ public class AppController {
     @GetMapping("Results")
     public String ResultsRoute(Model model,HttpSession session, HttpServletResponse response, HttpServletRequest request) throws JsonProcessingException {
 
-////        System.out.println(answersService.summaryAnswer("test2"));
-////        JSONObject apiResTenant = new JSONObject(ResTenant.getBody());
-//        JSONArray returnVal = answersService.summaryAnswer("Aszeroo");
-////        System.out.println(objectMapper.readValue(answersService.summaryAnswer("test2").toString(), Object.class));
-//        if(returnVal == null){
-////            System.out.println(answersService.summaryAnswer("test2").toString());
-//            returnVal = new JSONArray();
-//        }
-
         model.addAttribute("listAns", objectMapper.readValue(answersService.summaryAnswer(session.getAttribute("username").toString()).toString(), Answerdata[].class));
 
         return "pages/Results";

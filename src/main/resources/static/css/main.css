@@ -64,7 +64,7 @@ iframe{
 .table100 .ps__rail-y .ps__thumb-y{width:100%;right:0;background-color:transparent;opacity:1!important}
 .table100 .ps__rail-y .ps__thumb-y::before{content:"";display:block;position:absolute;background-color:#ccc;border-radius:5px;width:100%;height:calc(100% - 30px);left:0;top:15px}
 .limiter{width:1366px;margin:0 auto}
-.container-table100{width:100%;min-height:30vh;background:#fff;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
+.container-table100{width:100%;min-height:30vh;background:#f8f8f8;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
 
 .wrap-table100{width:1150px;text-align: center;}
 .table100{background-color:#fff}table{width:100%}th,td{font-weight:unset;padding-right:10px}
