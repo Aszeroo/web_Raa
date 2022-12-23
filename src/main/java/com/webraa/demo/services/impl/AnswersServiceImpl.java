@@ -46,9 +46,9 @@ public class AnswersServiceImpl implements AnswersService {
 
         for (String s : summation) {
             List<String> detail = Arrays.asList(s.split(","));
-            int total = Integer.parseInt(detail.get(1)) + Integer.parseInt(detail.get(2));
-            int percent = (Integer.parseInt(detail.get(1)) * 100) / total;
-            subSum.put("topic_id", detail.get(0)).put("yes", detail.get(1)).put("no", detail.get(2))
+            int total = Integer.parseInt(detail.get(2)) + Integer.parseInt(detail.get(3));
+            int percent = (Integer.parseInt(detail.get(2)) * 100) / total;
+            subSum.put("topic_id", detail.get(0)).put("topic_name", detail.get(1)).put("yes", detail.get(2)).put("no", detail.get(3))
                     .put("total", Integer.toString(total)).put("percent", Integer.toString(percent));
             sumArray.put(subSum);
             subSum = new JSONObject();
