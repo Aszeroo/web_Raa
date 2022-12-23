@@ -1,5 +1,7 @@
 package com.webraa.demo.controllers;
+
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.webraa.demo.entities.User;
 import com.webraa.demo.models.ApiResponseError;
@@ -30,6 +32,9 @@ public class AnswersController {
     @Autowired
     AnswersService answersService;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
     @RequestMapping(value = "allanswer", method = RequestMethod.POST)
     public ResponseEntity<?> saveanswer(HttpServletRequest request, HttpServletResponse response, HttpSession session, @RequestBody String reqBody) {
         try {
@@ -45,14 +50,13 @@ public class AnswersController {
     @RequestMapping(value = "summary-answer/{username}", method = RequestMethod.GET)
     public ResponseEntity<?> summaryAnswer(HttpServletRequest request, HttpServletResponse response, HttpSession session, @PathVariable String username) {
         try {
-            return ResponseEntity.ok(new ApiResponseSuccess("Find Answers successful.", answersService.summaryAnswer(username)));
+            return ResponseEntity.ok(new ApiResponseSuccess("Find Answers successful.", objectMapper.readValue(answersService.summaryAnswer(username).toString(), Object.class)));
         } catch (Exception ex) {
             ex.printStackTrace();
             return ResponseEntity.internalServerError().body(new ApiResponseError("US0002" +
                     "", "Can not find new answers"));
         }
     }
-
 
 
 }

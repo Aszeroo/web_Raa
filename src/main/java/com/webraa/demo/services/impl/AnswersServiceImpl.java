@@ -8,10 +8,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class AnswersServiceImpl implements AnswersService {
@@ -41,9 +38,19 @@ public class AnswersServiceImpl implements AnswersService {
     }
 
     @Override
-    public List<String> summaryAnswer(String username) {
+    public JSONArray summaryAnswer(String username) {
         List<String> summation = answersRepository.summaryAnswer(username);
 
-        return answersRepository.summaryAnswer(username);
+        JSONArray sumArray = new JSONArray();
+        JSONObject subSum = new JSONObject();
+
+        for (String s : summation) {
+            List<String> detail = Arrays.asList(s.split(","));
+            subSum.put("topic_id", detail.get(0)).put("yes", detail.get(1)).put("no", detail.get(2));
+            sumArray.put(subSum);
+            subSum = new JSONObject();
+        }
+
+        return sumArray;
     }
 }
