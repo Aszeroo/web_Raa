@@ -5,8 +5,6 @@
     <title>Results</title>
     <th:block th:include="layout/css"></th:block>
     <link rel="stylesheet" type="text/css" th:href="@{css/history.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{css/util.css}">
 </head>
 <body>
 <!----------------- MENU ------------------->
@@ -45,38 +43,40 @@
                 </div>
             </div>
         </div>
-        <div class="container-table100">
-            <div class="wrap-table100 center">
-                <div class="table100 ver1 m-b-110">
-                    <div class="table100-head">
-                        <table>
-                            <thead>
-                            <tr class="row100 head">
-                                <th class="cell100 column1"> Topic</th>
-                                <th class="cell100 column2"> Yes</th>
-                                <th class="cell100 column3"> No</th>
-                                <th class="cell100 column4"> Total Practices</th>
-                                <th class="cell100 column5"> Percent Complete</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="table100-body js-pscroll">
-                        <table>
-                            <tbody>
-                                <tr class="row100 body" th:each="list: ${listAns}">
-                                    <td class="cell100 column1" th:text="${list.topic_name}"/>
-                                    <td class="cell100 column2" th:text="${list.yes}"/>
-                                    <td class="cell100 column3" th:text="${list.no}"/>
-                                    <td class="cell100 column4" th:text="${list.total}"/>
-                                    <td class="cell100 column5" th:text="${list.percent}"/>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <p class="text-center">Topic</p>
+                    </th>
+                    <th>
+                        <p class="text-center">Yes</p>
+                    </th>
+                    <th>
+                        <p class="text-center">No</p>
+                    </th>
+                    <th>
+                        <p class="text-center">Total Practieces</p>
+                    </th>
+                    <th>
+                        <p class="text-center">Precent Complete</p>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="fw-bold" th:each="list: ${listAns}">
+                    <td class="fw-bold" th:text="${list.topic_name}"/>
+                    <td class="text-center fw-bold" th:text="${list.yes}"/>
+                    <td class="text-center fw-bold" th:text="${list.no}"/>
+                    <td class="text-center fw-bold" th:text="${list.total}"/>
+                    <td class="text-center fw-bold" th:text="${list.percent}"/>
+                </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
+</div>
 <br><br><br>
 </div>
 <th:block th:include="layout/js"></th:block>
