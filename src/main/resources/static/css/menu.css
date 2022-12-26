@@ -1,3 +1,9 @@
 .nav-link{
     font-size:18px;
 }
+.navbar-text{
+    position: absolute;
+    right: 16px;
+    font-size: 18px;
+    color: #f0f0f0;
+}

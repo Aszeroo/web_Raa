@@ -44,30 +44,47 @@ public class AppController {
 
     @GetMapping("history")
     public String historyRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
-        model.addAttribute("username", session.getAttribute("username"));
         model.addAttribute("firstname", session.getAttribute("firstname"));
+        model.addAttribute("username", session.getAttribute("username"));
         model.addAttribute("lastname", session.getAttribute("lastname"));
         model.addAttribute("companyName", session.getAttribute("companyName"));
         model.addAttribute("type", session.getAttribute("type"));
         return "pages/history";
     }
 
+
     @GetMapping("Results")
     public String ResultsRoute(Model model,HttpSession session, HttpServletResponse response, HttpServletRequest request) throws JsonProcessingException {
 
         model.addAttribute("listAns", objectMapper.readValue(answersService.summaryAnswer(session.getAttribute("username").toString()).toString(), Answerdata[].class));
-
+        model.addAttribute("firstname", session.getAttribute("firstname"));
+        model.addAttribute("username", session.getAttribute("username"));
+        model.addAttribute("lastname", session.getAttribute("lastname"));
+        model.addAttribute("companyName", session.getAttribute("companyName"));
+        model.addAttribute("type", session.getAttribute("type"));
         return "pages/Results";
     }
 
     @GetMapping("changepassword")
-    public String changepasswordRoute() {
+    public String changepasswordRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
+        model.addAttribute("firstname", session.getAttribute("firstname"));
+        model.addAttribute("username", session.getAttribute("username"));
+        model.addAttribute("lastname", session.getAttribute("lastname"));
+        model.addAttribute("companyName", session.getAttribute("companyName"));
+        model.addAttribute("type", session.getAttribute("type"));
     return "pages/changepassword";
 }
+
     @GetMapping("landingpage")
-    public String landingpageRoute() {
+    public String landingpageRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
+        model.addAttribute("firstname", session.getAttribute("firstname"));
+        model.addAttribute("username", session.getAttribute("username"));
+        model.addAttribute("lastname", session.getAttribute("lastname"));
+        model.addAttribute("companyName", session.getAttribute("companyName"));
+        model.addAttribute("type", session.getAttribute("type"));
         return "pages/landingpage";
     }
+
 
     @GetMapping("assessment")
     public String assessmentRoute(HttpSession session, HttpServletResponse response, HttpServletRequest request, Model model) {
