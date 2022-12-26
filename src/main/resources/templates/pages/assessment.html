@@ -3191,6 +3191,10 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
     var username = /*[[${username}]]*/ '';
+    if (!username) {
+        alert("Session Expired")
+        window.location.href = "/login"
+    }
     /*]]>*/
 </script>
 </body>

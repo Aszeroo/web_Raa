@@ -20,7 +20,7 @@ public class AnswersServiceImpl implements AnswersService {
     public List<Answers> saveAll(JSONArray answersList) {
         Answers saveAnswer = new Answers();
         List<Answers> answers = new ArrayList<>();
-
+        //saveAnswer.set[new field](UUID.randomUUID().toString()); เป็นตัวบอกไอดีของแต่ละรอบที่ส่งแบบสอบถาม
         for (Object o : answersList) {
             JSONObject object = new JSONObject(o.toString());
             saveAnswer.setAnswerId(UUID.randomUUID().toString());
