@@ -133,4 +133,11 @@ h1{
     display: block;
     text-align: center;
   }
+  th,td{
+    font-size: 18px;
+    text-align: center;
+  }
+  tr{
+    padding-top: 0.358rem;
+  }
 }
