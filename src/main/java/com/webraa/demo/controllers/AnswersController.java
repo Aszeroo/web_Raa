@@ -48,9 +48,9 @@ public class AnswersController {
     }
 
     @RequestMapping(value = "summary-answer/{username}", method = RequestMethod.GET)
-    public ResponseEntity<?> summaryAnswer(HttpServletRequest request, HttpServletResponse response, HttpSession session, @PathVariable String username) {
+    public ResponseEntity<?> summaryAnswer(HttpServletRequest request, HttpServletResponse response, HttpSession session, @PathVariable String username, @PathVariable String roundId) {
         try {
-            return ResponseEntity.ok(new ApiResponseSuccess("Find Answers successful.", objectMapper.readValue(answersService.summaryAnswer(username).toString(), Object.class)));
+            return ResponseEntity.ok(new ApiResponseSuccess("Find Answers successful.", objectMapper.readValue(answersService.summaryAnswer(username, roundId).toString(), Object.class)));
         } catch (Exception ex) {
             ex.printStackTrace();
             return ResponseEntity.internalServerError().body(new ApiResponseError("US0002" +

@@ -42,8 +42,9 @@ function saveanswer() {
         data: JSON.stringify(requestSave),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        success: function () {
-            window.location.href = "/Results"
+        success: function (result) {
+            console.log("result=> "+result.data[0].roundId);
+            window.location.href = "/Results?roundId=" + result.data[0].roundId;
         },
         error: function (xhr, textStatus, errorThrown) {
             var response = JSON.parse(xhr.responseText);

@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,9 +55,9 @@ public class AppController {
 
 
     @GetMapping("Results")
-    public String ResultsRoute(Model model,HttpSession session, HttpServletResponse response, HttpServletRequest request) throws JsonProcessingException {
+    public String ResultsRoute(Model model, HttpSession session, HttpServletResponse response, HttpServletRequest request, @RequestParam String roundId) throws JsonProcessingException {
 
-        model.addAttribute("listAns", objectMapper.readValue(answersService.summaryAnswer(session.getAttribute("username").toString()).toString(), Answerdata[].class));
+        model.addAttribute("listAns", objectMapper.readValue(answersService.summaryAnswer(session.getAttribute("username").toString(), roundId).toString(), Answerdata[].class));
         model.addAttribute("firstname", session.getAttribute("firstname"));
         model.addAttribute("username", session.getAttribute("username"));
         model.addAttribute("lastname", session.getAttribute("lastname"));

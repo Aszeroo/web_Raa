@@ -28,6 +28,8 @@ public class Answers {
     private String answer;
     private String answerDiscription;
     private String comment;
+    private String roundId;
+
     @CreatedDate
     private Date createDate;
     private String createBy;

@@ -9,6 +9,6 @@ public interface AnswersService {
 
     List<Answers> saveAll(JSONArray answersList);
 
-    JSONArray summaryAnswer(String username);
+    JSONArray summaryAnswer(String username, String roundId);
 
 }

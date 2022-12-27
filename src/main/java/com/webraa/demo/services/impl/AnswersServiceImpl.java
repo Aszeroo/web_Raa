@@ -20,7 +20,7 @@ public class AnswersServiceImpl implements AnswersService {
     public List<Answers> saveAll(JSONArray answersList) {
         Answers saveAnswer = new Answers();
         List<Answers> answers = new ArrayList<>();
-        //saveAnswer.set[new field](UUID.randomUUID().toString()); เป็นตัวบอกไอดีของแต่ละรอบที่ส่งแบบสอบถาม
+        String newRoundId = UUID.randomUUID().toString(); //เป็นตัวบอกไอดีของแต่ละรอบที่ส่งแบบสอบถาม
         for (Object o : answersList) {
             JSONObject object = new JSONObject(o.toString());
             saveAnswer.setAnswerId(UUID.randomUUID().toString());
@@ -29,6 +29,7 @@ public class AnswersServiceImpl implements AnswersService {
             saveAnswer.setAnswerStatus(object.getString("answer_status"));
             saveAnswer.setCreateBy(object.getString("create_by"));
             saveAnswer.setCreateDate(new Date());
+            saveAnswer.setRoundId(newRoundId);
             answers.add(saveAnswer);
 
             saveAnswer = new Answers();
@@ -38,12 +39,13 @@ public class AnswersServiceImpl implements AnswersService {
     }
 
     @Override
-    public JSONArray summaryAnswer(String username) {
-        List<String> summation = answersRepository.summaryAnswer(username);
+    public JSONArray summaryAnswer(String username, String roundId) {
+        List<String> summation = answersRepository.summaryAnswer(username, roundId);
 
         JSONArray sumArray = new JSONArray();
         JSONObject subSum = new JSONObject();
-
+            System.out.println("summation => "+summation);
+        JSONArray summationJSON = new JSONArray(summation);
         for (String s : summation) {
             List<String> detail = Arrays.asList(s.split(","));
             int total = Integer.parseInt(detail.get(2)) + Integer.parseInt(detail.get(3));
