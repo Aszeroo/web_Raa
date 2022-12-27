@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         JSONObject returnVal = new JSONObject();
         returnVal.put("status", false).put("description", "");
 
-        List<User> userList = userRepository.findByUsername(reqVal.getString("email"));
+        List<User> userList = userRepository.findByUsername(reqVal.getString("username"));
         if (userList.size() == 0) {
             returnVal.put("description", "Invalid Account");
         } else {

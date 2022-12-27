@@ -26,7 +26,7 @@ const container = document.querySelector(".container"),
     $('#login-user-form').on('submit', function (e) {
         e.preventDefault();
         var objectLogin = {
-            "email": $('#email').val(),
+            "username": $('#username').val(),
             "password": $('#password').val()
         }
         $.ajax({
