@@ -1,5 +1,4 @@
-
-    const container = document.querySelector(".container"),
+const container = document.querySelector(".container"),
     pwShowHide = document.querySelectorAll(".showHidePw"),
     pwFields = document.querySelectorAll(".password");
 
@@ -41,12 +40,15 @@
                 console.log("data -> ", data)
                 var response = JSON.parse(data)
                 if (response.data.status) {
-
                     location.href = "/landingpage"
 
                 } else {
-                    alert("status : fail description : " + response.data.description)
-                }
+                        swal({
+                            title: "Eror!",
+                            text: "Username Or Password Your Incorrect Please Try Again",
+                            icon: "error",
+                        });
+                    }
             },
             error: function (xhr, textStatus, errorThrown) {
                 var response = JSON.parse(xhr.responseText);

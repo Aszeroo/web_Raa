@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="button">
-                <input type="submit" id="save-user" onclick="document.location='/login'"/>
+                <input type="submit" id="save-user" onclick="validatePassword()"/>
             </div>
             <div class="login-signup">
                     <span class="text">You Have Account ? Please
@@ -112,6 +112,7 @@
         <!--            </div>-->
         <!--        </div>-->
 <script th:src="@{/js/register.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

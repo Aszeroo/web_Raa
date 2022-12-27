@@ -28,6 +28,7 @@ $('#new-user-form').on('submit', function (e) {
         url: '/apis/user/save',
         success: function (data, textStatus) {
             console.log("data -> ", data)
+            var response = JSON.parse(data)
         },
         error: function (xhr, textStatus, errorThrown) {
             var response = JSON.parse(xhr.responseText);
@@ -36,19 +37,24 @@ $('#new-user-form').on('submit', function (e) {
     });
 });
 
-var password = document.getElementById("password")
+    var password = document.getElementById("password")
     , confirm_password = document.getElementById("cpwd");
 
 function validatePassword(){
-    if(password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
+    if(password.value === confirm_password.value) {
         confirm_password.setCustomValidity('');
+        window.location.href="/login"
+    } else {
+        swal({
+            title: "Eror!",
+            text: "Passwords Don't Match",
+            icon: "error",
+        });
     }
 }
+
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
-
 const input = document.getElementById('firstName,lastName,companyName,tel,email,username,password,cpwd');
 input.setAttribute('required', '');
 
