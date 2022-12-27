@@ -134,6 +134,15 @@
 <!--    </div>-->
 <th:block th:include="layout/js"></th:block>
 </div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var username = /*[[${username}]]*/ '';
+    if (!username) {
+        alert("Session Expired")
+        window.location.href = "/login"
+    }
+    /*]]>*/
+</script>
 </body>
 
 

@@ -81,6 +81,15 @@
 </div>
 <th:block th:include="layout/js"></th:block>
 <script th:src="@{/js/assessment.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var username = /*[[${username}]]*/ '';
+    if (!username) {
+        alert("Session Expired")
+        window.location.href = "/login"
+    }
+    /*]]>*/
+</script>
 </div>
 </body>
 </html>

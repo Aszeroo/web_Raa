@@ -73,11 +73,16 @@ th,td{font-weight:unset;padding-right:10px}
 td{text-align: center;}
 th{text-align: center;}
 
-.column1{width:4%;}
-.column2{width:9%;}
-.column3{width:7%;}
-.column4{width:9%;}
-.column5{width:5%;}
+.column1{width:25%;}
+.column2{width:25%;}
+.column3{width:25%;}
+.column4{width:25%;}
+.column5{width:25%;}
+.column6{width:25%;}
+.column7{width:25%;}
+.column8{width:25%;}
+.column9{width:25%;}
+.column10{width:25%;}
 
 .table100-head {background-color:#F7941C}
 .table100-head {background-color:#F7941C;padding-top:18px;padding-bottom:18px}
