@@ -41,14 +41,13 @@ const container = document.querySelector(".container"),
                 var response = JSON.parse(data)
                 if (response.data.status) {
                     location.href = "/landingpage"
-
-                } else {
-                        swal({
-                            title: "Eror!",
-                            text: "Username Or Password Your Incorrect Please Try Again",
-                            icon: "error",
-                        });
-                    }
+                }else{
+                    swal({
+                        title: "Error!",
+                        text: "Username Or Password Your Incorrect Please Try Again",
+                        icon: "error",
+                    });
+                }
             },
             error: function (xhr, textStatus, errorThrown) {
                 var response = JSON.parse(xhr.responseText);

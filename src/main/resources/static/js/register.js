@@ -41,12 +41,11 @@ $('#new-user-form').on('submit', function (e) {
     , confirm_password = document.getElementById("cpwd");
 
 function validatePassword(){
-    if(password.value === confirm_password.value) {
-        confirm_password.setCustomValidity('');
+    if(password === confirm_password) {
         window.location.href="/login"
     } else {
         swal({
-            title: "Eror!",
+            title: "Error!",
             text: "Passwords Don't Match",
             icon: "error",
         });
@@ -54,7 +53,7 @@ function validatePassword(){
 }
 
 password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+confirm_password.onclick = validatePassword;
 const input = document.getElementById('firstName,lastName,companyName,tel,email,username,password,cpwd');
 input.setAttribute('required', '');
 
